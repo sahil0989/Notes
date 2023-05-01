@@ -1,0 +1,73 @@
+<%- include('layout/header') %>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-light">Edit User (<%= user.name %>)</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/update/<%= user._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control form-control form-control-lg" placeholder="Enter Name" value="<%= user.name %>" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control form-control form-control-lg" value="<%= user.email %>" placeholder="Enter email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Select Image</label>
+                            <input type="file" name="image" class="form-control form-control form-control-lg" />
+                            <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1" alt="">
+                        </div>
+                        <input type="hidden" name="old_image" value="<%= user.image %>">
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="Update User" class="btn btn-success btn-lg"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<main class="table editBlock" style="overflow: scroll;">
+  <div>
+    <div class="">
+      <div class="home">
+        <a href="/" class="homeBtn"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+      </div>
+      <div class="">
+        <div class="">
+          <div class="userHead">
+            <h3 class="">Edit Note</h3>
+          </div>
+          <div class="formBody">
+            <form action="/update/<%= user._id %>" method="post" id="add-form" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="name">Title</label><br>
+                <input type="text" name="name" value="<%= user.name %>" class="inputValue" placeholder="Enter Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email">Description</label><br>
+                <textarea name="email" class="inputValue" cols="20" rows="4"><%= user.email %></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Select File</label><br>
+                <input type="file" name="image" class="inputValue" />
+                <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1" alt="">
+              </div>
+              <input type="hidden" name="old_image" value="<%= user.image %>">
+              <div class="mb-3 btn">
+                <input type="submit" name="submit" value="Add User" class="btn-lg inputValue" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('layout/footer') %>

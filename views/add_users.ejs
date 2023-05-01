@@ -1,0 +1,39 @@
+<%- include('layout/header') %>
+
+<main class="table">
+  <div>
+    <div class="">
+      <div class="home">
+        <a href="/" class="homeBtn"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
+      </div>
+      <div class="">
+        <div class="">
+          <div class="userHead">
+            <h3 class="">Add New User</h3>
+          </div>
+          <div class="formBody">
+            <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="name">Title</label><br>
+                <input type="text" name="name" class="inputValue" placeholder="Enter Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email">Description</label><br>
+                <textarea name="email" class="inputValue" cols="20" rows="4"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Select File</label><br>
+                <input type="file" name="image" class="inputValue" required />
+              </div>
+              <div class="mb-3 btn">
+                <input type="submit" name="submit" value="Add User" class="btn-lg inputValue" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('layout/footer') %>

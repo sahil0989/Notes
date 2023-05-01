@@ -1,0 +1,41 @@
+<%- include('layout/header') %>
+
+<main class="table">
+  <section class="table__header">
+    <h1 class="">Notes</h1>
+    
+    <div class="input-group">
+      <input type="search" placeholder="Search Data...">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </section>
+  <section class="table__body">
+    <table>
+      <thead>
+        <tr>
+          <th> Sr No. <span class="icon-arrow">&UpArrow;</span></th>
+          <th> Name</th>
+          <th> Description</th>
+          <th> Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach((row, index) => { %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= row.name %></td>
+          <td class="description">
+            <div><%= row.email %></div>
+          </td>
+          <td>
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <a href="<%= row.image %>" download="download" class="download">Download</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('layout/footer') %>

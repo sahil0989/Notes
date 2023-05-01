@@ -1,0 +1,50 @@
+<%- include('layout/header') %>
+
+<main class="table">
+  <section class="table__header">
+    <h1 class="">My Notes</h1>
+    <div class="">
+      <a href="/add" class="addUser"><i class="fa fa-user-plus" aria-hidden="true"></i>
+        <h3>&nbsp;&nbsp;Add users</h3>
+      </a>
+    </div>
+    <div class="input-group">
+      <input type="search" placeholder="Search Data...">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </section>
+  <section class="table__body">
+    <table>
+      <thead>
+        <tr>
+          <th> Sr No. <span class="icon-arrow">&UpArrow;</span></th>
+          <th> Name</th>
+          <th> Description</th>
+          <th> Download</th>
+          <th> Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach((row, index) => { %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= row.name %></td>
+          <td class="description">
+            <div class="descriptionDiv"><%= row.email %></div>
+          </td>
+          <td>
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <a href="<%= row.image %>" download="download" class="download">Download</a>
+          </td>
+          <td class="edit">
+            <a href="/edit/<%= row._id %>" class="text-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </i></a>
+            <a href="/delete/<%= row._id %>" class="text-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+<%- include('layout/footer') %>
