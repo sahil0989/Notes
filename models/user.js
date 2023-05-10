@@ -17,4 +17,4 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("aapneNotes", userSchema);
+module.exports = mongoose.model("fileData", userSchema);
