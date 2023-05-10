@@ -21,6 +21,7 @@ var uploads = multer({
 router.post('/add', uploads, async (req, res) => {
     const user = {
         name: req.body.name,
+        title: req.body.title,
         email: req.body.email,
         phone: req.body.phone,
         image: req.file.filename,
@@ -90,6 +91,7 @@ router.post('/update/:id', uploads, (req, res) => {
 
     User.findByIdAndUpdate(id, {
         name: req.body.name,
+        title: req.body.title,
         email: req.body.email,
         phone: req.body.phone,
         image: new_image,
