@@ -46,8 +46,12 @@
           <div class="formBody">
             <form action="/update/<%= user._id %>" method="post" id="add-form" enctype="multipart/form-data">
               <div class="mb-3">
-                <label for="name">Title</label><br>
+                <label for="name">Subject</label><br>
                 <input type="text" name="name" value="<%= user.name %>" class="inputValue" placeholder="Enter Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" value="<%= user.title %>" class="inputValue" placeholder="Enter Name" required />
               </div>
               <div class="mb-3">
                 <label for="email">Description</label><br>

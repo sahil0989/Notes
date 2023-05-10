@@ -62,7 +62,7 @@ router.get("/edit/:id", (req, res) => {
     User.findById(id)
         .then((user) => {
             if (user == null) {
-                res.render("/admin");
+                res.render("/");
             } else {
                 res.render("edit_users", {
                     title: "Edit User",
