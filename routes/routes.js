@@ -99,7 +99,7 @@ router.post('/update/:id', uploads, (req, res) => {
                 type: "Success",
                 message: "User updated Successfully!",
             };
-            res.redirect('/');
+            res.redirect('/admin');
         }).catch(err => {
             res.json({ message: message, type: "danger" })
         })
@@ -121,7 +121,7 @@ router.get('/delete/:id', (req, res) => {
                 type: 'success',
                 message: "User deleted success",
             }
-            res.redirect("/");
+            res.redirect("/admin");
 
         }).catch(err => {
             res.json({ message: err.message })
